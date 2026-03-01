@@ -53,12 +53,12 @@
       orange: '#DDF5F7',     // ฟ้าพาสเทล (แทนส้มเดิม)
       bg: '#F8FCFD',         // พื้นหลังเว็บ (ฟ้า/ขาว อ่อนมากๆ)
       white: '#FFFFFF',      
-      textMain: '#2D428B',   // ⭐สีกรมท่า (Dark Navy)
+      textMain: '#709cfd',   // ⭐สีกรมท่า (Dark Navy)
       textSoft: '#648EEA',   // ⭐สีฟ้าเข้ม (Medium Blue)
       pinkDeep: '#648EEA',   
-      blueDeep: '#2D428B',   
+      blueDeep: '#709cfd',   
       purpleDeep: '#648EEA', 
-      orangeDeep: '#2D428B', 
+      orangeDeep: '#709cfd', 
       cardBg: '#FFFFFF',     
       cardBgDone: '#F8FCFD', 
 
@@ -129,14 +129,14 @@
   {"JAOLOVE.STUDIO16".split('').map((char, index) => (
     <span 
       key={index} 
-      className={`bg-gradient-to-br from-[#2D428B] to-[#648EEA] bg-clip-text text-transparent drop-shadow-sm inline-block animate-text-wave pb-2 ${char === ' ' ? 'w-2.5' : 'pr-[1.5px]'}`} 
+      className={`bg-gradient-to-br from-[#709cfd] to-[#648EEA] bg-clip-text text-transparent drop-shadow-sm inline-block animate-text-wave pb-2 ${char === ' ' ? 'w-2.5' : 'pr-[1.5px]'}`} 
       style={{ animationDelay: `${index * 0.1}s` }}
     >
       {char}
     </span>
   ))}
 </h1>
-              <button onClick={() => isAdmin ? setIsAdmin(false) : setShowAuthModal(true)} className={`px-1.5 py-0.5 ml-1 rounded-full text-[7px] font-black uppercase tracking-widest border shadow-sm transition-all active:scale-95`} style={{ backgroundColor: isAdmin ? `${COLORS.buttonBg}99` : `${COLORS.buttonBg}cc`, color: isAdmin ? '#2D428B' : '#9ca3af', borderColor: isAdmin ? '#DDF5F7' : '#e5e7eb' }}>
+              <button onClick={() => isAdmin ? setIsAdmin(false) : setShowAuthModal(true)} className={`px-1.5 py-0.5 ml-1 rounded-full text-[7px] font-black uppercase tracking-widest border shadow-sm transition-all active:scale-95`} style={{ backgroundColor: isAdmin ? `${COLORS.buttonBg}99` : `${COLORS.buttonBg}cc`, color: isAdmin ? '#709cfd' : '#9ca3af', borderColor: isAdmin ? '#DDF5F7' : '#e5e7eb' }}>
                 {isAdmin ? 'Admin' : 'Guest'}
               </button>
             </div>
@@ -194,9 +194,9 @@
                         <circle cx="50" cy="50" r="14" fill="#FFFFFF" className="transition-all duration-700" />
                         {isFullBloom && (
                           <g transform="translate(50, 50)" className="animate-fade-in">
-                            <path d="M -5 -1 Q -3 -3 -1 -1" fill="none" stroke="#2D428B" strokeWidth="1.2" strokeLinecap="round" />
-                            <path d="M 1 -1 Q 3 -3 5 -1" fill="none" stroke="#2D428B" strokeWidth="1.2" strokeLinecap="round" />
-                            <path d="M -1.5 2 Q 0 4 1.5 2" fill="none" stroke="#2D428B" strokeWidth="1.2" strokeLinecap="round" />
+                            <path d="M -5 -1 Q -3 -3 -1 -1" fill="none" stroke="#709cfd" strokeWidth="1.2" strokeLinecap="round" />
+                            <path d="M 1 -1 Q 3 -3 5 -1" fill="none" stroke="#709cfd" strokeWidth="1.2" strokeLinecap="round" />
+                            <path d="M -1.5 2 Q 0 4 1.5 2" fill="none" stroke="#709cfd" strokeWidth="1.2" strokeLinecap="round" />
                             <ellipse cx="-6" cy="1" rx="1.5" ry="1" fill="#FCE6F1" opacity="0.8"/>
                             <ellipse cx="6" cy="1" rx="1.5" ry="1" fill="#FCE6F1" opacity="0.8"/>
                           </g>
@@ -292,10 +292,10 @@
             <div className="flex items-center gap-2 min-w-0">
               <span className="font-bold text-base truncate" style={{ color: COLORS.textMain }}>{task.client}</span>
               <span className={`text-[7px] px-1.5 py-0.5 rounded-md font-black uppercase border ${
-                task.channel === 'LINE' ? 'text-[#2D428B] bg-[#DDF5F7] border-[#DDF5F7]' : 
+                task.channel === 'LINE' ? 'text-[#709cfd] bg-[#DDF5F7] border-[#DDF5F7]' : 
                 task.channel === 'FB' || task.channel === 'FACEBOOK' ? 'text-[#FFFFFF] bg-[#648EEA] border-[#648EEA]' : 
-                task.channel === 'IG' ? 'text-[#2D428B] bg-[#FCE6F1] border-[#FCE6F1]' : 
-                'text-[#2D428B] bg-[#E8E2F8] border-[#E8E2F8]'
+                task.channel === 'IG' ? 'text-[#709cfd] bg-[#FCE6F1] border-[#FCE6F1]' : 
+                'text-[#709cfd] bg-[#E8E2F8] border-[#E8E2F8]'
               }`}>{task.channel}</span>
               {task.priority === 'urgent' && <span className="text-[9px] font-bold animate-pulse px-2 py-0.5 rounded-full shadow-sm" style={{ color: COLORS.textMain, backgroundColor: COLORS.pink }}>{'\u{1F525}'} ด่วน</span>}
             </div>
@@ -327,7 +327,7 @@
             ) : (
               <div className="flex items-center">
                 {task.status === 'doing' && <span className="text-[10px] font-bold text-[#648EEA] flex items-center gap-1 bg-[#FCE6F1] px-2 py-1 rounded-md border border-[#FCE6F1] shadow-sm"><IconLoader size={10} className="animate-spin-slow"/> กำลังทำ</span>}
-                {task.status === 'done' && <span className="text-[10px] font-bold text-[#2D428B] flex items-center gap-1 px-2 py-1 rounded-md border border-[#DDF5F7] shadow-sm" style={{ backgroundColor: COLORS.blue }}><IconCheck size={10} /> เสร็จแล้ว</span>}
+                {task.status === 'done' && <span className="text-[10px] font-bold text-[#709cfd] flex items-center gap-1 px-2 py-1 rounded-md border border-[#DDF5F7] shadow-sm" style={{ backgroundColor: COLORS.blue }}><IconCheck size={10} /> เสร็จแล้ว</span>}
                 {task.status === 'todo' && <span className="text-[10px] font-bold text-gray-400 flex items-center gap-1 px-2 py-1 rounded-md border border-gray-100 shadow-sm" style={{ backgroundColor: COLORS.buttonBg }}><IconClock size={10} /> รอคิว</span>}
               </div>
             )}
@@ -355,7 +355,7 @@
         <div className="backdrop-blur-xl rounded-[32px] p-5 shadow-[0_12px_30px_rgba(221,245,247,0.5)] mb-5 animate-fadeIn" style={{ background: `linear-gradient(135deg, ${COLORS.cardWhite} 50%, ${COLORS.purple} 150%)`, borderWidth: '4px', borderColor: COLORS.cardBorder }}>
           <div className="flex justify-between items-center mb-4 px-2">
             <button onClick={() => setCurrentMonth(new Date(year, month - 1, 1))} className="p-1.5 hover:bg-[#DDF5F7] rounded-full transition-colors text-[#648EEA]"><IconChevronLeft size={20}/></button>
-            <h3 className="font-black text-[16px] text-[#2D428B] tracking-widest">{monthNames[month]} {year}</h3>
+            <h3 className="font-black text-[16px] text-[#709cfd] tracking-widest">{monthNames[month]} {year}</h3>
             <button onClick={() => setCurrentMonth(new Date(year, month + 1, 1))} className="p-1.5 hover:bg-[#DDF5F7] rounded-full transition-colors text-[#648EEA]"><IconChevronRight size={20}/></button>
           </div>
           
@@ -382,7 +382,7 @@
                       isSelected 
                         ? 'bg-[#648EEA] text-white rounded-full font-black shadow-md scale-105'
                         : isToday 
-                          ? 'text-[#2D428B] font-black bg-[#DDF5F7] rounded-full'
+                          ? 'text-[#709cfd] font-black bg-[#DDF5F7] rounded-full'
                           : 'text-[#648EEA] font-bold hover:bg-[#F8FCFD] hover:shadow-sm rounded-full'
                     }`}
                     style={isToday && !isSelected ? { borderWidth: '2px', borderColor: COLORS.cardBorder } : !isSelected ? { borderWidth: '0px' } : {}}
@@ -642,12 +642,12 @@
                     <img src={bannerImage} alt="Shop Banner" className="w-full h-full object-cover" />
                     <div className="absolute top-2 right-2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                        {isAdmin && (
-                         <button onClick={() => setShowBannerModal(true)} className="p-1.5 backdrop-blur-md rounded-full shadow-sm hover:text-[#2D428B]" style={{ color: COLORS.textSoft, backgroundColor: `${COLORS.bannerOverlayBg}e6` }} title="เปลี่ยนแบนเนอร์">
+                         <button onClick={() => setShowBannerModal(true)} className="p-1.5 backdrop-blur-md rounded-full shadow-sm hover:text-[#709cfd]" style={{ color: COLORS.textSoft, backgroundColor: `${COLORS.bannerOverlayBg}e6` }} title="เปลี่ยนแบนเนอร์">
                             <IconImage size={16} />
                          </button>
                        )}
                        {isAdmin && (
-                         <button onClick={() => toggleBannerVisibility(false)} className="p-1.5 backdrop-blur-md rounded-full shadow-sm hover:text-[#2D428B]" style={{ color: COLORS.textSoft, backgroundColor: `${COLORS.bannerOverlayBg}e6` }} title="ซ่อนแบนเนอร์">
+                         <button onClick={() => toggleBannerVisibility(false)} className="p-1.5 backdrop-blur-md rounded-full shadow-sm hover:text-[#709cfd]" style={{ color: COLORS.textSoft, backgroundColor: `${COLORS.bannerOverlayBg}e6` }} title="ซ่อนแบนเนอร์">
                             <IconEyeOff size={16} />
                          </button>
                        )}
@@ -714,7 +714,7 @@
                       const newView = !isCalendarView;
                       setIsCalendarView(newView); 
                       if(newView) setFilterType('all'); 
-                    }} className="flex items-center gap-1.5 px-3 py-1.5 backdrop-blur-md rounded-full shadow-sm text-[9px] font-black uppercase tracking-widest hover:text-[#2D428B] transition-all active:scale-95" style={{ color: COLORS.textSoft, backgroundColor: `${COLORS.buttonBg}cc`, borderWidth: '2px', borderColor: COLORS.cardBorder }}>
+                    }} className="flex items-center gap-1.5 px-3 py-1.5 backdrop-blur-md rounded-full shadow-sm text-[9px] font-black uppercase tracking-widest hover:text-[#709cfd] transition-all active:scale-95" style={{ color: COLORS.textSoft, backgroundColor: `${COLORS.buttonBg}cc`, borderWidth: '2px', borderColor: COLORS.cardBorder }}>
                       {isCalendarView ? <><IconList size={14} /> รูปแบบรายการ</> : <><IconCalendar size={14} /> รูปแบบปฏิทิน</>}
                     </button>
                   </div>
@@ -747,7 +747,7 @@
                   </button>
                   {isAdmin && (
                     <div className="absolute left-1/2 -translate-x-1/2 -top-6">
-                      <button onClick={() => { setEditingTask(null); setShowModal(true); }} className="w-14 h-14 rounded-full text-white flex items-center justify-center shadow-xl shadow-[#DDF5F7]/50 active:scale-90 transition-transform" style={{ background: `linear-gradient(to bottom right, #648EEA, #2D428B)`, borderWidth: '4px', borderColor: COLORS.cardWhite }}>
+                      <button onClick={() => { setEditingTask(null); setShowModal(true); }} className="w-14 h-14 rounded-full text-white flex items-center justify-center shadow-xl shadow-[#DDF5F7]/50 active:scale-90 transition-transform" style={{ background: `linear-gradient(to bottom right, #648EEA, #709cfd)`, borderWidth: '4px', borderColor: COLORS.cardWhite }}>
                         <IconPlus size={24} />
                       </button>
                     </div>
@@ -762,12 +762,12 @@
               <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/10 backdrop-blur-[2px] animate-fadeIn">
                 {/* 🌟 ใส่ Gradient ให้ Modal */}
                 <form onSubmit={handleSaveTask} className="backdrop-blur-xl w-full max-w-xs rounded-[35px] p-6 shadow-2xl animate-slideUp" style={{ background: `linear-gradient(135deg, ${COLORS.modalBg} 60%, ${COLORS.purple} 150%)`, borderWidth: '2px', borderColor: COLORS.cardBorder }}>
-                   <h3 className="text-sm font-black mb-4 text-center text-[#2D428B]">{editingTask ? 'แก้ไขคิวงาน ✨' : 'เพิ่มคิวใหม่ ✨'}</h3>
+                   <h3 className="text-sm font-black mb-4 text-center text-[#709cfd]">{editingTask ? 'แก้ไขคิวงาน ✨' : 'เพิ่มคิวใหม่ ✨'}</h3>
                    <div className="space-y-2 relative">
                      {isSaving && (
                         <div className="absolute inset-0 z-50 flex flex-col items-center justify-center rounded-2xl backdrop-blur-sm" style={{ backgroundColor: `${COLORS.modalBg}cc` }}>
                            <IconLoader size={32} className="animate-spin-slow" style={{ color: COLORS.textMain }} />
-                           <span className="text-[10px] font-black mt-2 text-[#2D428B]">กำลังบันทึก...</span>
+                           <span className="text-[10px] font-black mt-2 text-[#709cfd]">กำลังบันทึก...</span>
                         </div>
                      )}
                      
@@ -801,7 +801,7 @@
                    <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-wider font-black" style={{ color: COLORS.textMain }}>
                      <IconCalendar size={12} className="group-hover:animate-bounce-slow transition-transform" /><span>Deadline</span>
                    </div>
-                   <input name="deadline" type="date" required defaultValue={editingTask?.deadline || nextQueueDate} className="w-32 p-2.5 rounded-xl border border-[#DDF5F7] outline-none text-[10px] font-black text-[#2D428B] shadow-sm focus:border-[#2D428B] focus:ring-2 focus:ring-[#2D428B]/50 transition-all cursor-pointer active:scale-95 hover:border-[#2D428B]" style={{ backgroundColor: COLORS.cardInner }} />
+                   <input name="deadline" type="date" required defaultValue={editingTask?.deadline || nextQueueDate} className="w-32 p-2.5 rounded-xl border border-[#DDF5F7] outline-none text-[10px] font-black text-[#709cfd] shadow-sm focus:border-[#709cfd] focus:ring-2 focus:ring-[#709cfd]/50 transition-all cursor-pointer active:scale-95 hover:border-[#709cfd]" style={{ backgroundColor: COLORS.cardInner }} />
                  </div>
                  
                  <div className="flex items-center gap-2 mt-3">
@@ -812,7 +812,7 @@
                      </button>
                    )}
                  </div>
-                 <button type="button" onClick={() => { setShowModal(false); setEditingTask(null); }} className="w-full text-[9px] font-bold text-[#648EEA] mt-2 uppercase tracking-widest hover:text-[#2D428B] transition-colors">Close</button>
+                 <button type="button" onClick={() => { setShowModal(false); setEditingTask(null); }} className="w-full text-[9px] font-bold text-[#648EEA] mt-2 uppercase tracking-widest hover:text-[#709cfd] transition-colors">Close</button>
                </div>
             </form>
           </div>
@@ -824,14 +824,14 @@
         {showAuthModal && (
           <div className="fixed inset-0 z-[110] flex items-center justify-center p-6 bg-black/10 backdrop-blur-[2px] animate-fadeIn">
             <form onSubmit={handleAdminLogin} className="backdrop-blur-xl w-full max-w-xs rounded-[35px] p-6 shadow-2xl animate-slideUp" style={{ background: `linear-gradient(135deg, ${COLORS.modalBg} 60%, ${COLORS.purple} 150%)`, borderWidth: '2px', borderColor: COLORS.cardBorder }}>
-               <h3 className="text-sm font-black mb-4 text-center text-[#2D428B]">เข้าสู่ระบบ Admin</h3>
+               <h3 className="text-sm font-black mb-4 text-center text-[#709cfd]">เข้าสู่ระบบ Admin</h3>
                <div className="space-y-2">
                  <input type="password" required value={password} onChange={(e) => { setPassword(e.target.value); setAuthError(false); }} className={`w-full p-3.5 rounded-2xl border outline-none text-[11px] shadow-sm transition-all text-center tracking-widest ${authError ? 'border-red-300 focus:border-red-400' : 'border-[#DDF5F7] focus:border-[#648EEA]'}`} style={{ backgroundColor: COLORS.cardInner }} placeholder="ใส่รหัสผ่าน" disabled={isVerifyingAuth} />
                  {authError && <p className="text-red-400 text-[9px] text-center font-bold">รหัสผ่านไม่ถูกต้อง!</p>}
                  <button type="submit" disabled={isVerifyingAuth} className="w-full h-11 rounded-2xl font-black text-xs mt-3 text-white shadow-lg flex items-center justify-center active:scale-95 transition-all disabled:opacity-70" style={{ backgroundColor: COLORS.textMain }}>
                     {isVerifyingAuth ? <IconLoader size={16} className="animate-spin-slow" /> : 'Login'}
                  </button>
-                 <button type="button" onClick={() => { setShowAuthModal(false); setAuthError(false); setPassword(''); }} className="w-full text-[9px] font-bold text-[#648EEA] mt-1 uppercase tracking-widest hover:text-[#2D428B] transition-colors" disabled={isVerifyingAuth}>Close</button>
+                 <button type="button" onClick={() => { setShowAuthModal(false); setAuthError(false); setPassword(''); }} className="w-full text-[9px] font-bold text-[#648EEA] mt-1 uppercase tracking-widest hover:text-[#709cfd] transition-colors" disabled={isVerifyingAuth}>Close</button>
                </div>
             </form>
           </div>
@@ -856,11 +856,11 @@
                 setShowImageModal(false); 
                 setTempImageUrl(''); 
             }} className="backdrop-blur-xl w-full max-w-xs rounded-[35px] p-6 shadow-2xl animate-slideUp" style={{ background: `linear-gradient(135deg, ${COLORS.modalBg} 60%, ${COLORS.purple} 150%)`, borderWidth: '2px', borderColor: COLORS.cardBorder }}>
-               <h3 className="text-sm font-black mb-4 text-center text-[#2D428B]">เปลี่ยนรูปโปรไฟล์ 🐰</h3>
+               <h3 className="text-sm font-black mb-4 text-center text-[#709cfd]">เปลี่ยนรูปโปรไฟล์ 🐰</h3>
                <div className="space-y-2">
                  <input type="url" required value={tempImageUrl} onChange={(e) => setTempImageUrl(e.target.value)} className="w-full p-3.5 rounded-2xl border border-[#DDF5F7] outline-none text-[11px] shadow-sm focus:border-[#648EEA] transition-all text-center" style={{ backgroundColor: COLORS.cardInner }} placeholder="วางลิงก์รูปภาพ Google Drive ที่นี่..." />
                  <button type="submit" className="w-full py-3.5 rounded-2xl font-black text-xs mt-3 text-white shadow-lg active:scale-95 transition-all" style={{ backgroundColor: COLORS.textMain }}>Save Image</button>
-                 <button type="button" onClick={() => { setShowImageModal(false); setTempImageUrl(''); }} className="w-full text-[9px] font-bold text-[#648EEA] mt-1 uppercase tracking-widest hover:text-[#2D428B] transition-colors">Close</button>
+                 <button type="button" onClick={() => { setShowImageModal(false); setTempImageUrl(''); }} className="w-full text-[9px] font-bold text-[#648EEA] mt-1 uppercase tracking-widest hover:text-[#709cfd] transition-colors">Close</button>
                </div>
             </form>
           </div>
@@ -886,11 +886,11 @@
                 setShowBannerModal(false); 
                 setTempBannerUrl(''); 
             }} className="backdrop-blur-xl w-full max-w-xs rounded-[35px] p-6 shadow-2xl animate-slideUp" style={{ background: `linear-gradient(135deg, ${COLORS.modalBg} 60%, ${COLORS.purple} 150%)`, borderWidth: '2px', borderColor: COLORS.cardBorder }}>
-               <h3 className="text-sm font-black mb-4 text-center text-[#2D428B]">เปลี่ยนแบนเนอร์</h3>
+               <h3 className="text-sm font-black mb-4 text-center text-[#709cfd]">เปลี่ยนแบนเนอร์</h3>
                <div className="space-y-2">
                  <input type="url" required value={tempBannerUrl} onChange={(e) => setTempBannerUrl(e.target.value)} className="w-full p-3.5 rounded-2xl border border-[#DDF5F7] outline-none text-[11px] shadow-sm focus:border-[#648EEA] transition-all text-center" style={{ backgroundColor: COLORS.cardInner }} placeholder="วางลิงก์รูปภาพ Google Drive..." />
                  <button type="submit" className="w-full py-3.5 rounded-2xl font-black text-xs mt-3 text-white shadow-lg active:scale-95 transition-all" style={{ backgroundColor: COLORS.textMain }}>Save Banner</button>
-                 <button type="button" onClick={() => { setShowBannerModal(false); setTempBannerUrl(''); }} className="w-full text-[9px] font-bold text-[#648EEA] mt-1 uppercase tracking-widest hover:text-[#2D428B] transition-colors">Close</button>
+                 <button type="button" onClick={() => { setShowBannerModal(false); setTempBannerUrl(''); }} className="w-full text-[9px] font-bold text-[#648EEA] mt-1 uppercase tracking-widest hover:text-[#709cfd] transition-colors">Close</button>
                </div>
             </form>
           </div>
@@ -905,12 +905,12 @@
               <div className="w-14 h-14 rounded-full bg-[#FCE6F1] text-[#648EEA] flex items-center justify-center mx-auto mb-3 shadow-sm border border-[#DDF5F7]">
                  <IconTrash size={26} />
               </div>
-              <h3 className="text-[14px] font-black mb-1 text-[#2D428B]">ยืนยันการลบ?</h3>
+              <h3 className="text-[14px] font-black mb-1 text-[#709cfd]">ยืนยันการลบ?</h3>
               <p className="text-[10px] font-bold text-[#648EEA] mb-5">คุณต้องการลบคิวงานนี้ใช่หรือไม่<br/>(ไม่สามารถกู้คืนได้)</p>
               
               <div className="flex gap-2">
-                <button onClick={() => setTaskToDelete(null)} className="flex-1 py-3 rounded-2xl font-black text-[10px] text-[#2D428B] bg-[#F8FCFD] hover:bg-[#DDF5F7] border border-[#DDF5F7] active:scale-95 transition-all shadow-sm">ยกเลิก</button>
-                <button onClick={executeDeleteTask} className="flex-1 py-3 rounded-2xl font-black text-[10px] text-white bg-[#648EEA] hover:bg-[#2D428B] active:scale-95 transition-all shadow-sm">ลบข้อมูล</button>
+                <button onClick={() => setTaskToDelete(null)} className="flex-1 py-3 rounded-2xl font-black text-[10px] text-[#709cfd] bg-[#F8FCFD] hover:bg-[#DDF5F7] border border-[#DDF5F7] active:scale-95 transition-all shadow-sm">ยกเลิก</button>
+                <button onClick={executeDeleteTask} className="flex-1 py-3 rounded-2xl font-black text-[10px] text-white bg-[#648EEA] hover:bg-[#709cfd] active:scale-95 transition-all shadow-sm">ลบข้อมูล</button>
               </div>
             </div>
           </div>
@@ -947,4 +947,5 @@
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(<App />);
