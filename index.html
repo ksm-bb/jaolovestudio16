@@ -53,7 +53,7 @@
       orange: '#DDF5F7',     // ฟ้าพาสเทล (แทนส้มเดิม)
       bg: '#F8FCFD',         // พื้นหลังเว็บ (ฟ้า/ขาว อ่อนมากๆ)
       white: '#FFFFFF',      
-      textMain: '#',   // ⭐สีกรมท่า (Dark Navy)
+      textMain: '#709cfd',   // ⭐สีกรมท่า (Dark Navy)
       textSoft: '#648EEA',   // ⭐สีฟ้าเข้ม (Medium Blue)
       pinkDeep: '#648EEA',   
       blueDeep: '#c0f1fc',   
@@ -136,7 +136,7 @@
     </span>
   ))}
 </h1>
-              <button onClick={() => isAdmin ? setIsAdmin(false) : setShowAuthModal(true)} className={`px-1.5 py-0.5 ml-1 rounded-full text-[7px] font-black uppercase tracking-widest border shadow-sm transition-all active:scale-95`} style={{ backgroundColor: isAdmin ? `${COLORS.buttonBg}99` : `${COLORS.buttonBg}cc`, color: isAdmin ? '#a6c6ff' : '#9ca3af', borderColor: isAdmin ? '#DDF5F7' : '#e5e7eb' }}>
+              <button onClick={() => isAdmin ? setIsAdmin(false) : setShowAuthModal(true)} className={`px-1.5 py-0.5 ml-1 rounded-full text-[7px] font-black uppercase tracking-widest border shadow-sm transition-all active:scale-95`} style={{ backgroundColor: isAdmin ? `${COLORS.buttonBg}99` : `${COLORS.buttonBg}cc`, color: isAdmin ? '#709cfd' : '#9ca3af', borderColor: isAdmin ? '#DDF5F7' : '#e5e7eb' }}>
                 {isAdmin ? 'Admin' : 'Guest'}
               </button>
             </div>
@@ -949,7 +949,6 @@
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(<App />);
-
 
 
 
